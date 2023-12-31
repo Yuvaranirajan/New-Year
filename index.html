@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2024</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/firework.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <section class="d-flex justify-content-center min-vh-100 align-items-center">
+      <div class="timer d-flex justify-content-center  align-items-center">
+         <p class="countdown">
+            
+         </p>
+      </div>
+    </section>
+    <section class="wishnone">
+        <div class="d-flex justify-content-center min-vh-100 align-items-center">
+            <p class="">Happy New Year 2024 </p>
+        </div>
+        
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/firework.js"></script>
+    <script>
+        $('.wishnone').fireworks({  width: '100%', height: '100%' });
+        let countDown=document.querySelector(".countdown");
+        var count=5;
+        wishNone=document.querySelector(".wishnone");
+       function timer(count){
+          countDown.innerHTML=count;
+       }
+       var x=setInterval(()=>{
+        timer(count);
+        if(count==-1)
+       {
+        clearInterval(x);
+        reveal(count);
+        
+       }
+       count=count-1;
+
+        
+       }
+       ,1000);
+       function reveal(count){
+        if(count<0){
+            wishNone.style.display="block";
+        }
+    }
+        
+       
+  
+        
+       
+        
+    </script>
+</body>
+</html>
